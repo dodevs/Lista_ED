@@ -22,6 +22,6 @@ int main(){
 		somaNotas += notaProva;
 	}
 
-	printf("%s - nota media: %f\n", nome, somaNotas/qtdProvas);
+	printf("%s - nota media: %.2f\n", nome, somaNotas/qtdProvas);
 	return 0;
 }
