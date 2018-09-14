@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void normalize(int *mat, int linhas, int colunas, double maior) {
+void normalize(double *mat, int linhas, int colunas, double maior) {
     for(int lin=0; lin < linhas; lin++){
         if(lin!= 0) printf("\n");
         for(int col=0; col < colunas; col++){
@@ -19,7 +19,7 @@ void normalize(int *mat, int linhas, int colunas, double maior) {
 int main() {
     double mat[3][3];
     double maior = 0;
-    
+
     for (int i=0; i < 3; i++) {
         for(int j=0; j < 3; j++){
             printf("posicao [%d][%d]: ", i, j);
