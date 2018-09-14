@@ -4,21 +4,25 @@
  */
 
 #include <stdio.h>
+#define VET_TAM 10
+
+void shift(int *v, int tam, int idx){
+	for(; idx < tam; idx++){
+		v[idx] = v[idx+1];
+	}
+}
 
 int main(){
-	int vetorOriginal[10];
-	int tamanhoVetor;
-
-	printf("%s","Entre com a quantidade de numeros a serem lidos: (menor que 10) ");
-	scanf("%d\n", &tamanhoVetor);
-
-	for(int i = 0; i < tamanhoVetor; i++){
-	       	scanf("%d\n", vetorOriginal+i );
+	int vetorOriginal[VET_TAM] = {0, 1, 3, -1, 0, 0, 5, 0, 4, 0}; /* Resultado final deve ser {1, 3, -1, 5, 4, 0, 0, 0, 0, 0} */
+	//shift(vetorOriginal, VET_TAM, 3);
+	for(int i = 0; i < VET_TAM; i++){
+		if(vetorOriginal[i] == 0){
+			shift(vetorOriginal, VET_TAM, i);
+			vetorOriginal[VET_TAM-1] = 0;
+		}
 	}
-
-    printf("%d", *vetorOriginal);
-
-	
-
+	for(int i = 0; i < VET_TAM; i++){
+		printf("%d ", vetorOriginal[i]);
+	}
 	return 0;
 }
